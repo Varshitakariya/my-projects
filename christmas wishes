@@ -1,0 +1,40 @@
+def print_christmas_tree():
+    # Tree decoration characters
+    ornaments = ['*', 'o', '@', '+']
+    from random import choice
+    
+    # Print Merry Christmas message
+    print("\n" + "🎄 MERRY CHRISTMAS! 🎄".center(50))
+    print("May your day be filled with joy and peace!".center(50))
+    print()
+    
+    # Tree top star
+    print(("⭐").center(50))
+    
+    # Tree body
+    tree_width = 23
+    for i in range(tree_width):
+        spaces = " " * (tree_width - i)
+        if i == 0:
+            print(spaces + "*")
+        else:
+            decorations = ""
+            for j in range(2 * i + 1):
+                if j % 2 == 0 and i % 2 == 0:
+                    decorations += choice(ornaments)
+                else:
+                    decorations += "/"
+            print(spaces + decorations)
+    
+    # Tree trunk
+    trunk_height = 4
+    trunk_width = 5
+    for i in range(trunk_height):
+        print((" " * (tree_width - trunk_width // 2)) + "|" * trunk_width)
+    
+    # Base decorations
+    print("=" * 50)
+    print("\n" + "🎁  🎅  🦌  ⛄  🔔  🎁".center(50))
+
+if __name__ == "__main__":
+    print_christmas_tree()
